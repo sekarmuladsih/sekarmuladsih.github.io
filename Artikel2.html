@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel SQL: DDL, DML, dan DCL - Sekar Muladsih</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f0eb;
+            padding: 20px;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .content-box {
+            border: 1px solid black;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .article-box {
+            border: 1px solid black;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .article-box h3 {
+            margin-top: 0;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .btn-home {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        h2, h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="content-box">
+    <h2>Artikel: DDL, DML, dan DCL dalam SQL</h2>
+    <nav class="navbar navbar-light">
+        <a class="btn btn-dark" href="index.html">Home</a>
+    </nav>
+    <div class="article-box">
+        <h3>A. DDL (Data Definition Language)</h3>
+        <p>DDL, atau Data Definition Language, digunakan untuk mendefinisikan struktur dan skema database. Ini termasuk membuat, mengubah, dan menghapus objek-objek dalam basis data seperti tabel, indeks, dan tampilan.</p>
+        <p><strong>Contoh perintah DDL yang umum digunakan:</strong></p>
+        <ul>
+            <li><strong>CREATE:</strong> Digunakan untuk membuat objek baru dalam basis data.
+                <pre>CREATE TABLE Mahasiswa (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100),
+    umur INT
+);</pre>
+            </li>
+            <li><strong>ALTER:</strong> Digunakan untuk mengubah struktur objek yang sudah ada dalam basis data.
+                <pre>ALTER TABLE Mahasiswa
+ADD COLUMN alamat VARCHAR(255);</pre>
+            </li>
+            <li><strong>DROP:</strong> Digunakan untuk menghapus objek dari basis data.
+                <pre>DROP TABLE Mahasiswa;</pre>
+            </li>
+        </ul>
+    </div>
+
+    <div class="article-box">
+        <h3>B. DML (Data Manipulation Language)</h3>
+        <p>DML, atau Data Manipulation Language, digunakan untuk memanipulasi data yang ada dalam basis data. Ini mencakup operasi seperti menambah, mengubah, menghapus, dan mengambil data dari tabel.</p>
+        <p><strong>Contoh perintah DML yang umum digunakan:</strong></p>
+        <ul>
+            <li><strong>INSERT:</strong> Digunakan untuk menambahkan data baru ke dalam tabel.
+                <pre>INSERT INTO Mahasiswa (nama, umur, alamat)
+VALUES ('Budi', 20, 'Jl. Merdeka No. 123');</pre>
+            </li>
+            <li><strong>UPDATE:</strong> Digunakan untuk mengubah data yang sudah ada dalam tabel.
+                <pre>UPDATE Mahasiswa
+SET umur = 21
+WHERE nama = 'John';</pre>
+            </li>
+            <li><strong>DELETE:</strong> Digunakan untuk menghapus data dari tabel.
+                <pre>DELETE FROM Mahasiswa
+WHERE umur > 25;</pre>
+            </li>
+            <li><strong>SELECT:</strong> Digunakan untuk mengambil data dari tabel.
+                <pre>SELECT * FROM Mahasiswa;</pre>
+            </li>
+        </ul>
+    </div>
+
+    <div class="article-box">
+        <h3>C. DCL (Data Control Language)</h3>
+        <p>DCL, atau Data Control Language, digunakan untuk mengontrol hak akses dan izin pengguna terhadap objek database. DCL mencakup perintah-perintah seperti GRANT dan REVOKE.</p>
+        <p><strong>Contoh perintah yang umum digunakan:</strong></p>
+        <ul>
+            <li><strong>GRANT:</strong> Digunakan untuk memberikan izin kepada pengguna untuk melakukan operasi tertentu pada objek database.
+                <pre>GRANT SELECT, INSERT, UPDATE ON Mahasiswa TO 'user1'@'localhost';</pre>
+            </li>
+            <li><strong>REVOKE:</strong> Digunakan untuk mencabut izin yang telah diberikan sebelumnya kepada pengguna.
+                <pre>REVOKE INSERT ON Mahasiswa FROM 'user1'@'localhost';</pre>
+            </li>
+        </ul>
+    </div>
+
+    <a href="index.html" class="btn-home">Kembali ke Home</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
