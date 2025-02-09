@@ -18,19 +18,27 @@
             border: 1px solid black;
             padding: 20px;
             background-color: #f6f0eb;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .experience-box {
             border: 1px solid black;
             padding: 15px;
             margin-bottom: 20px;
             background-color: #fff;
+            text-align: center;
+            height: 100%;
         }
         .experience-box img {
             width: 35%;
             height: auto;
             border: 1px solid black;
             display: block;
-            margin: 0 auto;
+            margin: 10px auto;
+        }
+        .experience-box ul {
+            text-align: left;
+            padding-left: 20px;
         }
         .documentation-box {
             border: 1px solid black;
@@ -39,8 +47,8 @@
             background-color: #fff;
             position: relative;
             overflow: hidden;
-            width: 200%;
-            height: 100px;
+            width: 100%;
+            height: 250px;
         }
         .documentation-box img {
             width: 100%;
@@ -68,35 +76,37 @@
     <nav class="navbar navbar-light">
         <a class="btn btn-dark" href="index.html">Home</a>
     </nav>
-    <div class="row">
+    <div class="row g-4">
         <div class="col-md-6">
-            <div class="experience-box">
+            <div class="experience-box h-100">
                 <h4>Sekretaris Organisasi PMR Stemsend</h4>
                 <img src="foto/6.jpg" alt="Sekretaris">
-                <h3>Oktober 2023 - November 2024</h3>
+                <h5>Oktober 2023 - November 2024</h5>
                 <ul>
                     <li>Bertanggung jawab dalam pengarsipan dan pengelolaan dokumen organisasi.</li>
                     <li>Menyusun notulen rapat secara terperinci dan akurat.</li>
                     <li>Membuat surat resmi untuk keperluan organisasi.</li>
                     <li>Menyampaikan hasil rapat dengan keterampilan publik speaking yang baik.</li>
-                </ul>   
+                </ul>
+            </div>
         </div>
         <div class="col-md-6">
-            <div class="experience-box">
+            <div class="experience-box h-100">
                 <h4>Kegiatan Pra-PKL di MTs Negeri 7 Klaten</h4>
-                <img src="foto/7.jpg" alt="Sekretaris">
-                <h3>07 - 14 Oktober 2024</h3>
+                <img src="foto/7.jpg" alt="Pra-PKL">
+                <h5>07 - 14 Oktober 2024</h5>
                 <ul>
                     <li>Perawatan PC di laboratorium dan perpustakaan.</li>
                     <li>Membongkar dan Memperbaiki PC yang rusak atau mati.</li>
                     <li>Menginstal Ms. Office dan Windows 10 pada beberapa komputer di laboratorium.</li>
                     <li>Mengajar siswa SMP tentang dasar pengoperasian Ms. Office.</li>
-                </ul>   
+                </ul>
+            </div>
         </div>
     </div>
 
-    <h2 class="text-center mb-4">Dokumentasi</h2>
-    <div class="row">
+    <h2 class="text-center my-4">Dokumentasi</h2>
+    <div class="row g-4">
         <div class="col-md-4">
             <div class="documentation-box">
                 <img src="foto/8.jpg" class="active" alt="Dokumentasi 1">
@@ -126,6 +136,8 @@
     boxes.forEach(box => {
         let images = box.querySelectorAll('img');
         let currentIndex = 0;
+        images[currentIndex].style.opacity = 1;
+
         setInterval(() => {
             images[currentIndex].style.opacity = 0;
             currentIndex = (currentIndex + 1) % images.length;
